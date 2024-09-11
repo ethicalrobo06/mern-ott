@@ -1,0 +1,37 @@
+here in contollers dir:
+
+    res.status(200).json({ success: true, similar: data.results })
+
+similar is like for movie/id/similar
+
+res will {
+    "success":"true",
+    "similar":[]
+}
+
+------------------------------------------
+for GET BY CATEGORY:
+category: popular,top_rated,now_playing & upcoming
+
+-------------------------------------------
+In case of movie & tb controllers 
+pass type with (type,req,res) for all function
+and in url add /${type}/ for movie or tv.
+
+---------------------------------------------
+Converted int into string
+ let { id } = req.params
+  id = parseInt(id)
+
+--------------------------------------------------------------
+for deployment:
+-> npm run build
+
+->modify->
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon backend/server.js",
+    "start": "cross-env NODE_ENV=production node backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+  },
+
+-> npm run start
